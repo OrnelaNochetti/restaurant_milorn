@@ -2,7 +2,6 @@
 import prompt_sync from "prompt-sync";
 import { mesas } from "./mesas.js";
 import { comidas, bebidas } from "./menu.js";
-import { personas_por_mesa } from "./personas.js";
 import { reservas } from "./reservas.js";
 import { mostrarMenu } from "./ordenes.js";
 
@@ -18,7 +17,6 @@ function main() {
         console.table(comidas);
         let seleccionComida = prompt("Seleccione una comida: ")
     }
-
 }
 
 main();
