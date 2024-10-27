@@ -1,7 +1,7 @@
 
 import prompt_sync from "prompt-sync";
 import { comidas, bebidas, mostrarBebidas, mostrarComidas, } from "./carta.js";
-import {ordenes, verOrden} from "./ordenes.js";
+import {ordenes, verOrden, pagarOrden} from "./ordenes.js";
 
 const prompt = prompt_sync();
 
@@ -36,7 +36,10 @@ function opciones() {
             mostrarComidas();
             break;
         case 3:
-            verOrden(2);
+            verOrden(1);
+            break;
+        case 4:
+            pagarOrden();
             break;
         default:
             console.log("Opcion no valida");

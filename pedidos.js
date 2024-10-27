@@ -53,4 +53,5 @@ function verOrden(id) {
         console.log("Mesa no encontrada.");
     }
 }
-export {pedidos, pedirComida, pedirBebida, verOrden}
+
+export {pedidos, pedirComida, pedirBebida, verOrden }
