@@ -1,4 +1,4 @@
-import { reservas } from "./arreglos";
+import { reservas } from "./carta";
 
 const numero1 = 8000;
 const numero2 = 8000;
@@ -41,4 +41,16 @@ function pedirBebida(id) {
     }
     
 }
-export {pedidos, pedirComida, pedirBebida, }
+
+function verOrden(id) {
+    let mesas = mesas.find(m => m.id == id);
+    if (mesa) {
+        console.log("Orden de la Mesa:", id);
+        mesa.pedidos.forEach(pedido => {
+            console.log(`- ${pedido.nombre}: ${pedido.cantidad}`);
+        });
+    } else {
+        console.log("Mesa no encontrada.");
+    }
+}
+export {pedidos, pedirComida, pedirBebida, verOrden}

@@ -1,6 +1,7 @@
 
 import prompt_sync from "prompt-sync";
-import { comidas, bebidas, mesas } from "./arreglos.js";
+import { comidas, bebidas, mostrarBebidas, mostrarComidas, } from "./carta.js";
+import {ordenes, verOrden} from "./ordenes.js";
 
 const prompt = prompt_sync();
 
@@ -15,23 +16,32 @@ function mostrarMenu() {
     console.log("6. Salir");
 }
 
-function Menu() {
-    let id = prompt("elegir opcion del menu: \n 1.Ir al  Menu principal de laa aplicacion \n 2.pedir comida")
-    switch (id) {
+function pedirComida() {
+    console.log("Funcion pedir comida");
+}
 
+function pedirBebida() {
+    console.log("Funcion pedir bebida");
+}
+
+function opciones() {
+    // let id = parseInt(prompt("elegir opcion del menu: \n 1.Ir al  Menu principal de la aplicacion \n 2.pedir comida \n 3.pedir bebida \n 4.ver orden"));
+    mostrarMenu();
+    let id = parseInt(prompt("Opcion: "));
+    switch (id) {
         case 1:
-            mostrarMenu();
+            mostrarBebidas();
             break;
         case 2:
-            pedirComida();
+            mostrarComidas();
             break;
         case 3:
-            pedirBebida();
+            verOrden(2);
             break;
-        case 4:
-            verOrden();
         default:
+            console.log("Opcion no valida");
             break;
     }
 }
-Menu();
+
+opciones();
