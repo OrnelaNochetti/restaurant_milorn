@@ -46,7 +46,26 @@ function opciones() {
     }
 }
 
-function cancelarReservas(id) {
-    
-}
+function cancelarReservas(opcion, nombre, fecha) {
+    switch (opcion) {
+        case "cancelar_especifica":
+            let index = reservas.findIndex(reserva => reserva.nombre === nombre && reserva.fecha === fecha);
+            if (index !== -1) {
+                reservas.splice(index, 1);
+                console.log(`Reserva de ${Federico} para el ${27-10-2024} ha sido cancelada.`);
+    } else {
+        console.log("Reserva no encontrada.");
+    }
+           break;
+       case "cancelar todas":
+        reservas = [];
+        console.log("Todas las reservas han sido canceladas.");
+        break;
+        
+        default:
+            console.log("Opcion no valida.");
+            break;
+    }
+
 opciones();
+opcion();
