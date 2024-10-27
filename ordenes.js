@@ -16,19 +16,34 @@ function verOrden(id) {
     console.log(mesa.pedidos);
     
 }
-function calcularCobro (pedidos) {
-    let totalGeneral = 0;
-    for (let i=0; i < pedidos.length; i++) {
-        let pedido = pedido [i];
-        let subtotal=0;
- }
+
+// Función para calcular el cobro
+function calcularCobro(pedidos) {
+    let totalGeneral = 0; // Total que se va a cobrar
+
+    // Recorremos cada pedido
+    for (let i = 0; i < pedidos.length; i++) {
+        let pedido = pedidos[i]; // Obtenemos el pedido actual
+        let subtotal = 0; // Inicializamos el subtotal
+
+        // Recorremos cada item en el pedido
+        for (let j = 0; j < pedido.items.length; j++) {
+            let item = pedido.items[j]; // Obtenemos el item actual
+            subtotal += menu[item]; // Sumamos el precio del item al subtotal
+        }
+
+        // Mostramos el subtotal de cada persona
+        console.log(pedido.nombre + " ha pedido: " + pedido.items.join(", ") + " - Subtotal: $" + subtotal);
+        totalGeneral += subtotal; // Sumamos el subtotal al total general
+    }
+
+    // Mostramos el total a cobrar
+    console.log("El total a cobrar es: $" + totalGeneral);
+    return totalGeneral; // Retornamos el total
 }
 
-function pagarOrden(id) {
-    console.log ("El total a pagar es: $" + totalGeneal);
-    return totalGeneral;
+// Llamar a la función para calcular el cobro
+const totalCobro = calcularCobro(pedidos);
 
 
-}
-
-export {ordenes, verOrden, pagarOrden, calcularCobro}
+export {ordenes, verOrden, calcularCobro}
