@@ -50,7 +50,8 @@ function opciones() {
 
 function cancelarReservas(opcion, nombre, fecha) {
     switch (opcion) {
-        case "cancelar_especifica":
+        case 5:
+            "cancelar_especifica"
             let index = reservas.findIndex(reserva => reserva.nombre === nombre && reserva.fecha === fecha);
             if (index !== -1) {
                 reservas.splice(index, 1);
@@ -59,7 +60,8 @@ function cancelarReservas(opcion, nombre, fecha) {
         console.log("Reserva no encontrada.");
     }
            break;
-       case "cancelar todas":
+       case 6:
+        "cancelar todas"
         reservas = [];
         console.log("Todas las reservas han sido canceladas.");
         break;
