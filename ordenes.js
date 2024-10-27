@@ -16,9 +16,19 @@ function verOrden(id) {
     console.log(mesa.pedidos);
     
 }
-
-function pagarOrden(id) {
-    
+function calcularCobro (pedidos) {
+    let totalGeneral = 0;
+    for (let i=0; i < pedidos.length; i++) {
+        let pedido = pedido [i];
+        let subtotal=0;
+ }
 }
 
-export {ordenes, verOrden, pagarOrden}
+function pagarOrden(id) {
+    console.log ("El total a pagar es: $" + totalGeneal);
+    return totalGeneral;
+
+
+}
+
+export {ordenes, verOrden, pagarOrden, calcularCobro}
