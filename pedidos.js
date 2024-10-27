@@ -1,3 +1,5 @@
+import { reservas } from "./arreglos";
+
 const numero1 = 8000;
 const numero2 = 8000;
 const numero3 = 1000;
@@ -18,5 +20,25 @@ const pedidos = [
 
 console.log(`el total a pagar para el pedido ${pedidos[1].numeroPedido} es: $${pedidos[1].totalPagar}`);
 
+function pedirComida(id) {
+    let mesas = mesas.find(m => m.id = id);
+    let pedidoComida = prompt("Elija una opcion del menu");
+    if (pedidoComida > 0 && pedidoComida <= comidas.length) {
+        reservas.push({comidas})
+    } else {
+        console.log("opcion no valida");
+    }
+    
+}
 
-export {pedidos}
+function pedirBebida(id) {
+    let mesas = mesas.find(m => m.id = id);
+    let pedidoBebida = prompt("Elija una opcion del menu");
+    if (pedidoBebida > 0 && pedidoBebida <= bebidas.length) {
+        reservas.push({bebidas})
+    } else {
+        console.log("opcion no valida");
+    }
+    
+}
+export {pedidos, pedirComida, pedirBebida, }
