@@ -1,4 +1,3 @@
-
 import prompt_sync from "prompt-sync";
 import { comidas, bebidas, mostrarBebidas, mostrarComidas, } from "./carta.js";
 import {ordenes, verOrden, pagarOrden} from "./ordenes.js";
@@ -47,4 +46,7 @@ function opciones() {
     }
 }
 
+function cancelarReservas(id) {
+    
+}
 opciones();

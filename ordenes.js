@@ -20,4 +20,5 @@ function verOrden(id) {
 function pagarOrden(id) {
     
 }
+
 export {ordenes, verOrden, pagarOrden}
