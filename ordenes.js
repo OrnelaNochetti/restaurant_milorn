@@ -10,6 +10,7 @@ let mesas = [
     { id: 4, pedidos: [{ nombre: "sprite", cantidad: 3 }, {nombre: "milanesa de pollo napolitana", cantidad: 3}] },
 ]
 
+<<<<<<< Updated upstream
 function verOrden(id) {
     console.log("Funcion ver orden");
     const mesa = mesas.find(mesa => mesa.id === id)
@@ -22,3 +23,14 @@ function pagarOrden(id) {
 }
 
 export {ordenes, verOrden, pagarOrden}
+=======
+
+
+    function pagarOrden () {
+    let totalGenereal = 0;
+
+    
+
+
+}
+>>>>>>> Stashed changes
