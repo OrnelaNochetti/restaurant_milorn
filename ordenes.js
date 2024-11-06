@@ -10,27 +10,25 @@ let mesas = [
     { id: 4, pedidos: [{ nombre: "sprite", cantidad: 3 }, {nombre: "milanesa de pollo napolitana", cantidad: 3}] },
 ]
 
-<<<<<<< Updated upstream
 function verOrden(id) {
     console.log("Funcion ver orden");
     const mesa = mesas.find(mesa => mesa.id === id)
     console.log(mesa.pedidos);
     
 }
+function calcularCobro (pedidos) {
+    let totalGeneral = 0;
+    for (let i=0; i < pedidos.length; i++) {
+        let pedido = pedido [i];
+        let subtotal=0;
+ }
+}
 
 function pagarOrden(id) {
-    
-}
-
-export {ordenes, verOrden, pagarOrden}
-=======
-
-
-    function pagarOrden () {
-    let totalGenereal = 0;
-
-    
+    console.log ("El total a pagar es: $" + totalGeneal);
+    return totalGeneral;
 
 
 }
->>>>>>> Stashed changes
+
+export {ordenes, verOrden, pagarOrden, calcularCobro}

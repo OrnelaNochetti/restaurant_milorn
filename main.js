@@ -1,10 +1,8 @@
 import prompt_sync from "prompt-sync";
-<<<<<<< Updated upstream
-import { comidas, bebidas, mostrarBebidas, mostrarComidas, } from "./carta.js";
-import {ordenes, verOrden, pagarOrden} from "./ordenes.js";
-=======
-import { comidas, bebidas, mesas,} from "./arreglos.js";
->>>>>>> Stashed changes
+import {comidas, bebidas, mostrarBebidas, mostrarComidas, } from "./carta.js";
+import {ordenes, verOrden, pagarOrden, calcularCobro} from "./ordenes.js";
+import {comidas, bebidas, mesas,} from "./arreglos.js";
+
 
 const prompt = prompt_sync();
 
