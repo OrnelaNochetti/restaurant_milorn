@@ -45,8 +45,8 @@ function opciones() {
         default:
             console.log("Opcion no valida");
             break;
-    }
 }
+
 
 function cancelarReservas(opcion, nombre, fecha) {
     switch (opcion) {
