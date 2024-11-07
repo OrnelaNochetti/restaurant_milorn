@@ -1,7 +1,7 @@
 import prompt_sync from "prompt-sync";
 import {comidas, bebidas, mostrarBebidas, mostrarComidas, } from "./carta.js";
 import {ordenes, verOrden, calcularCobro} from "./ordenes.js";
-import {comidas, bebidas, mesas,} from "./arreglos.js";
+import {reservas} from "./reservas.js";
 
 
 const prompt = prompt_sync();
@@ -40,13 +40,13 @@ function opciones() {
             verOrden(1);
             break;
         case 4:
-            pagarOrden();
+            calcularCobro(2);
             break;
         default:
             console.log("Opcion no valida");
             break;
 }
-
+}
 
 function cancelarReservas(opcion, nombre, fecha) {
     switch (opcion) {
@@ -74,4 +74,4 @@ console.log(reservas);
 cancelarReservas(`cancelar_todas`);
 console.log(reservas);
 
-opciones();
+opciones()
