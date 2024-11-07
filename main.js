@@ -1,6 +1,6 @@
 import prompt_sync from "prompt-sync";
 import {comidas, bebidas, mostrarBebidas, mostrarComidas, } from "./carta.js";
-import {ordenes, verOrden, pagarOrden, calcularCobro} from "./ordenes.js";
+import {ordenes, verOrden, calcularCobro} from "./ordenes.js";
 import {comidas, bebidas, mesas,} from "./arreglos.js";
 
 
@@ -50,26 +50,28 @@ function opciones() {
 
 function cancelarReservas(opcion, nombre, fecha) {
     switch (opcion) {
-        case 5:
-            "cancelar_especifica"
+        case `cancelar_especifica`:
             let index = reservas.findIndex(reserva => reserva.nombre === nombre && reserva.fecha === fecha);
             if (index !== -1) {
                 reservas.splice(index, 1);
-                console.log(`Reserva de ${Federico} para el ${27-10-2024} ha sido cancelada.`);
-    } else {
-        console.log("Reserva no encontrada.");
-    }
-           break;
-       case 6:
-        "cancelar todas"
-        reservas = [];
-        console.log("Todas las reservas han sido canceladas.");
-        break;
-        
-        default:
+                console.log(`Reserva de ${nombre} para el ${fecha} ha sido cancelada.`);
+            } else {
+               console.log("Reserva no encontrada.");
+            }
+            break;
+       case `cancelar_todas`:
+            reservas = [];
+            console.log("Todas las reservas han sido canceladas.");
+            break;
+         default:
             console.log("Opcion no valida.");
             break;
     }
+}
+cancelarReservas(`cancelar_especifica`, "Federico", "2024-10-27");
+console.log(reservas);
+
+cancelarReservas(`cancelar_todas`);
+console.log(reservas);
 
 opciones();
-opcion();
