@@ -33,6 +33,7 @@ function opciones() {
         case 1:
             mostrarBebidas();
             break;
+            
         case 2:
             mostrarComidas();
             break;
