@@ -1,10 +1,12 @@
-import { reservas } from "./carta.js";
+import {comidas, bebidas, mostrarComidas, mostrarBebidas} from "./carta.js";
+
+const pedidos = []
 
 function pedirComida(id) {
     let mesas = mesas.find(m => m.id = id);
     let pedidoComida = prompt("Elija una opcion del menu");
     if (pedidoComida > 0 && pedidoComida <= comidas.length) {
-        reservas.push({comidas})
+        pedidos.push({comidas})
     } else {
         console.log("opcion no valida");
     }
@@ -15,7 +17,7 @@ function pedirBebida(id) {
     let mesas = mesas.find(m => m.id = id);
     let pedidoBebida = prompt("Elija una opcion del menu");
     if (pedidoBebida > 0 && pedidoBebida <= bebidas.length) {
-        reservas.push({bebidas})
+        pedidos.push({bebidas})
     } else {
         console.log("opcion no valida");
     }

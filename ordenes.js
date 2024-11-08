@@ -1,10 +1,10 @@
 
 import prompt_sync from "prompt-sync";
-
+import {pedidos} from "./pedidos.js";
 const ordenes = []
 
 let mesas = [
-    { id: 1, pedidos: [{ nombre: "coca cola", cantidad: 2 }, { nombre: "ravioles con tuco", cantidad: 2 }] },
+    { id: 1, pedidos: [{ nombre: "coca cola", cantidad: 2, precio: 4000 }, { nombre: "ravioles con tuco", cantidad: 2, precio: 16000 }] },
     { id: 2, pedidos: [{ nombre: "agua con gas", cantidad: 2 }, { nombre: "pure de papa con pechuga", cantidad: 2 }] },
     { id: 3, pedidos: [{ nombre: "cerveza", cantidad: 1 }, { nombre: "ñoquis a la crema", cantidad: 2}] },
     { id: 4, pedidos: [{ nombre: "sprite", cantidad: 3 }, {nombre: "milanesa de pollo napolitana", cantidad: 3}] },
@@ -34,8 +34,6 @@ function calcularCobro(pedidos) {
     console.log("El total a cobrar es: $" + totalGeneral);
     return totalGeneral;
 }
-
-calcularCobro(pedidos);
 
 
 export {ordenes, verOrden, calcularCobro}
