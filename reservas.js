@@ -1,3 +1,6 @@
+import prompt_sync from 'prompt-sync';
+const prompt = prompt_sync();
+
 const reservas = [
     {nombre: "julieta",
         fecha: "12/10/2024",
@@ -40,5 +43,30 @@ const reservas = [
         mesa: 10
     },
 ]
+function cancelarReservas(opcion, nombre, fecha) {
+    switch (opcion) {
+        case `cancelar_especifica`:
+            let index = reservas.findIndex(reserva => reserva.nombre === nombre && reserva.fecha === fecha);
+            if (index !== -1) {
+                reservas.splice(index, 1);
+                console.log(`Reserva de ${nombre} para el ${fecha} ha sido cancelada.`);
+            } else {
+               console.log("Reserva no encontrada.");
+            }
+            break;
+       case `cancelar_todas`:
+            console.log("Todas las reservas han sido canceladas.");
+            break;
+         default:
+            console.log("Opcion no valida.");
+            break;
+    }
+}
+cancelarReservas(`cancelar_especifica`, "Federico", "2024-10-27");
+cancelarReservas(`cancelar_todas`);
 
-export {reservas}
+function buscarReservasPorNombre(nombre) {
+    return reservas.filtrer(reserva => reserva.nombre.toLowerCase().trim() === nombre.toLowerCase().trim());
+    
+    }
+export {reservas, cancelarReservas, buscarReservasPorNombre}

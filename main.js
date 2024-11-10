@@ -1,7 +1,7 @@
 import prompt_sync from "prompt-sync";
 import {comidas, bebidas, mostrarBebidas, mostrarComidas, } from "./carta.js";
 import {ordenes, verOrden, calcularCobro} from "./ordenes.js";
-import {reservas} from "./reservas.js";
+import {reservas, cancelarReservas, buscarReservasPorNombre} from "./reservas.js";
 
 
 const prompt = prompt_sync();
@@ -32,47 +32,28 @@ function opciones() {
     switch (id) {
         case 1:
             mostrarBebidas();
-            break;
-            
+            //prompt("Presione una tecla para continuar")
+            opciones()
+            break; 
         case 2:
             mostrarComidas();
+            //prompt("Presione una tecla para continuar")
+            opciones()
             break;
         case 3:
             verOrden(1);
+           // prompt("Presione una tecla para continuar")
+            opciones()
             break;
         case 4:
             calcularCobro(2);
+           // prompt("Presione una tecla para continuar")
+            opciones()
             break;
         default:
             console.log("Opcion no valida");
             break;
 }
 }
-
-function cancelarReservas(opcion, nombre, fecha) {
-    switch (opcion) {
-        case `cancelar_especifica`:
-            let index = reservas.findIndex(reserva => reserva.nombre === nombre && reserva.fecha === fecha);
-            if (index !== -1) {
-                reservas.splice(index, 1);
-                console.log(`Reserva de ${nombre} para el ${fecha} ha sido cancelada.`);
-            } else {
-               console.log("Reserva no encontrada.");
-            }
-            break;
-       case `cancelar_todas`:
-            reservas = [];
-            console.log("Todas las reservas han sido canceladas.");
-            break;
-         default:
-            console.log("Opcion no valida.");
-            break;
-    }
-}
-cancelarReservas(`cancelar_especifica`, "Federico", "2024-10-27");
-console.log(reservas);
-
-cancelarReservas(`cancelar_todas`);
-console.log(reservas);
 
 opciones()
