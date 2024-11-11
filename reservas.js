@@ -45,11 +45,10 @@ const reservas = [
 ]
 
 function cancelarReservas(opcion) {
-    let nombre = prompt("Ingrese el nombre del cliente que cancela:");
-    let fecha = prompt("Ingrese la fecha del dia reservado:");
-
     switch (opcion) {
         case `cancelar_especifica`:
+            let nombre = prompt("Ingrese el nombre del cliente que cancela:");
+            let fecha = prompt("Ingrese la fecha del dia reservado:");
             let index = reservas.findIndex(reserva => reserva.nombre === nombre && reserva.fecha === fecha);
             if (index !== -1) {
                 reservas.splice(index, 1);
