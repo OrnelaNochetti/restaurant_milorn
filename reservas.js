@@ -43,7 +43,11 @@ const reservas = [
         mesa: 10
     },
 ]
-function cancelarReservas(opcion, nombre, fecha) {
+
+function cancelarReservas(opcion) {
+    let nombre = prompt("Ingrese el nombre del cliente que cancela:");
+    let fecha = prompt("Ingrese la fecha del dia reservado:");
+
     switch (opcion) {
         case `cancelar_especifica`:
             let index = reservas.findIndex(reserva => reserva.nombre === nombre && reserva.fecha === fecha);
@@ -55,6 +59,7 @@ function cancelarReservas(opcion, nombre, fecha) {
             }
             break;
        case `cancelar_todas`:
+            reservas = [];
             console.log("Todas las reservas han sido canceladas.");
             break;
          default:
