@@ -58,7 +58,6 @@ function cancelarReservas(opcion) {
             }
             break;
        case `cancelar_todas`:
-            reservas = [];
             console.log("Todas las reservas han sido canceladas.");
             break;
          default:
@@ -69,9 +68,17 @@ function cancelarReservas(opcion) {
 cancelarReservas(`cancelar_especifica`, "Federico", "27/10/2024");
 cancelarReservas(`cancelar_todas`);
 
-function buscarReservasPorNombre(nombre) {
-    return reservas.filtrer(reserva => reserva.nombre.toLowerCase().trim() === nombre.toLowerCase().trim());
+function buscarReservasPorNombre(reservas, nombre) {
+        const nombreBuscado = nombre.toLowerCase();
+        const reservasEncontradas = [];
     
+        for (let reserva of reservas) {
+            if (reserva.nombre.toLowerCase() === nombreBuscado) {
+                reservasEncontradas.push(reserva);
+            }
+        }
+    
+        return reservasEncontradas;
     }
     
 export {reservas, cancelarReservas, buscarReservasPorNombre}
