@@ -66,11 +66,12 @@ function cancelarReservas(opcion) {
             break;
     }
 }
-cancelarReservas(`cancelar_especifica`, "Federico", "2024-10-27");
+cancelarReservas(`cancelar_especifica`, "Federico", "27/10/2024");
 cancelarReservas(`cancelar_todas`);
 
 function buscarReservasPorNombre(nombre) {
     return reservas.filtrer(reserva => reserva.nombre.toLowerCase().trim() === nombre.toLowerCase().trim());
     
     }
+    
 export {reservas, cancelarReservas, buscarReservasPorNombre}

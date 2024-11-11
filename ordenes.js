@@ -54,5 +54,46 @@ function calcularCobro(mesaId) {
     console.log(`El total a cobrar por la mesa ${mesaId} es: $${totalGeneral}`);
     return totalGeneral;
 }
+/*
+function mostrarMenu() {
+    console.log("Menu del restaurante:");
+    for (let item in menu) {
+        console.log(`${item} : $${item[menu]}`);
+    }
+}
+function hacerPedido() {
+    let mesaId = parseInt(prompt("Ingrese el numero de la mesa:"));
+    let mesa = mesas.find(m => m.id === mesaId);
 
+    if(!mesa) {
+        console.log("Mesa no encontrada.");
+        return;
+    }
+}
+
+mostrarMenu();
+
+let pedido = [];
+let continuar = true;
+
+while(continuar) {
+    let item = prompt("Ingrese el nombre del item (o 'fin' para terminar):");
+    if (item === 'fin') {
+        continuar = false;    
+    } else if (menu[item]) {
+        let cantidad = parseInt(prompt("Ingrese la cantidad:"));
+        let precio = menu[item] * cantidad;
+        pedido.push({ nombre: item, cantidad: cantidad, precio: precio });
+    } else {
+        console.log("Item no encontrado en el menu.");
+    }
+}
+
+mesa.pedidos.push(...pedido);
+console.log(`Pedido para la mesa ${mesaId}:`);
+pedido.forEach(p => console.log(`${p.nombre} (x${p.cantidad}): $${p.precio}`));
+
+hacerPedido();
+console.log(mesas);
+*/
 export {ordenes, verOrden, calcularCobro}
