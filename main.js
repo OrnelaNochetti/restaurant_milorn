@@ -41,7 +41,7 @@ function opciones() {
             opciones()
             break;
         case 3:
-            verOrden(1);
+            verOrden(2);
            // prompt("Presione una tecla para continuar")
             opciones()
             break;
