@@ -54,6 +54,7 @@ function cancelarReservas(opcion) {
                 reservas[index].nombre = null;
                 reservas[index].fecha = null;
             console.log(`Reserva de la mesa ${mesaCancelada} ha sido cancelada.`);
+            console.log(reservas[index]);
             } else {
                console.log("Reserva no encontrada.");
             }
