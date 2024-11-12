@@ -17,14 +17,6 @@ function mostrarMenu() {
     console.log("6. Salir");
 }
 
-function pedirComida() {
-    console.log("Funcion pedir comida");
-}
-
-function pedirBebida() {
-    console.log("Funcion pedir bebida");
-}
-
 function opciones() {
     // let id = parseInt(prompt("elegir opcion del menu: \n 1.Ir al  Menu principal de la aplicacion \n 2.pedir comida \n 3.pedir bebida \n 4.ver orden"));
     mostrarMenu();
