@@ -41,12 +41,12 @@ function opciones() {
             opciones()
             break;
         case 3:
-            verOrden(2);
+            verOrden(3);
            // prompt("Presione una tecla para continuar")
             opciones()
             break;
         case 4:
-            calcularCobro(2);
+            calcularCobro(3);
            // prompt("Presione una tecla para continuar")
             opciones()
             break;

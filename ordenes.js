@@ -54,7 +54,7 @@ function calcularCobro(mesaId) {
     console.log(`El total a cobrar por la mesa ${mesaId} es: $${totalGeneral}`);
     return totalGeneral;
 }
-/*
+
 function mostrarMenu() {
     console.log("Menu del restaurante:");
     for (let item in menu) {
@@ -95,5 +95,5 @@ pedido.forEach(p => console.log(`${p.nombre} (x${p.cantidad}): $${p.precio}`));
 
 hacerPedido();
 console.log(mesas);
-*/
+
 export {ordenes, verOrden, calcularCobro}

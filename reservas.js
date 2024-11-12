@@ -58,7 +58,6 @@ function cancelarReservas(opcion) {
             }
             break;
        case `cancelar_todas`:
-            reservas = [];
             console.log("Todas las reservas han sido canceladas.");
             break;
          default:
