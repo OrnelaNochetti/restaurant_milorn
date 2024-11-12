@@ -7,14 +7,16 @@ import {reservas, cancelarReservas, buscarReservasPorNombre} from "./reservas.js
 const prompt = prompt_sync();
 
 function mostrarMenu() {
-    
+
     console.log("Menu del restaurante");
     console.log("1. Ver carta");
     console.log("2. Pedir comida");
     console.log("3. Pedir bebida");
     console.log("4. Ver orden");
     console.log("5. Pagar");
-    console.log("6. Salir");
+    console.log("6. Cancelar reserva");
+    
+    console.log("7. Salir");
 }
 
 function opciones() {
@@ -42,6 +44,11 @@ function opciones() {
            // prompt("Presione una tecla para continuar")
             opciones()
             break;
+        case 6:
+                cancelarReservas("cancelar_especifica");
+                //prompt("Presione una tecla para continuar")
+                opciones()
+                break;
         default:
             console.log("Opcion no valida");
             break;

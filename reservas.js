@@ -46,14 +46,14 @@ const reservas = [
 
 function cancelarReservas(opcion) {
     switch (opcion) {
-        case cancelar_especifica:
+        case 'cancelar_especifica':
             let mesaCancelada = prompt("Ingrese la mesa que cancela la reserva");
             let index = reservas.findIndex(reserva => reserva.mesa === mesaCancelada );
             if (index !== -1) {
                 reservas.nombre = null;
                 reservas.fecha = null;
                 
-                console.log(Reserva de la mesa ${"mesaCancelada} ha sido cancelada.");
+            console.log(`Reserva de la mesa ${mesaCancelada} ha sido cancelada.`);
             } else {
                console.log("Reserva no encontrada.");
             }
@@ -67,8 +67,14 @@ function cancelarReservas(opcion) {
     }
 }
 
-cancelarReservas(`cancelar_especifica`, "Federico", "27/10/2024");
-cancelarReservas(`cancelar_todas`);
+
+
+
+
+
+
+cancelarReservas('cancelar_especifica', "Federico", "27/10/2024");
+cancelarReservas('cancelar_todas');
 
 function buscarReservasPorNombre(reservas, nombre) {
         const nombreBuscado = nombre.toLowerCase();
