@@ -1,7 +1,7 @@
 import prompt_sync from "prompt-sync";
 import {comidas, bebidas, mostrarBebidas, mostrarComidas, } from "./carta.js";
 import {ordenes, verOrden, calcularCobro} from "./ordenes.js";
-import {reservas, cancelarReservas, buscarReservasPorNombre} from "./reservas.js";
+import {reservas, cancelarReservas, buscarReservasPorNombre, agregarReserva} from "./reservas.js";
 import { verMesas } from "./pedidos.js";
 
 
@@ -17,6 +17,7 @@ function mostrarMenu() {
     console.log("5. Pagar");
     console.log("6. Cancelar reserva");
     console.log("7. Ver mesas");
+    console.log("8. Agregar Reserva");
     
 }
 
@@ -52,6 +53,9 @@ function opciones() {
                 opciones()
                 break;
          case 7: verMesas();
+         opciones();
+         break;
+         case 8: agregarReserva();
          opciones();
          break;
         default:

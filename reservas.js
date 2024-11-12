@@ -82,5 +82,11 @@ function buscarReservasPorNombre(reservas, nombre) {
         return reservasEncontradas;
     }
 
-    
-export {reservas, cancelarReservas, buscarReservasPorNombre}
+    function agregarReserva() {
+        let fecha = prompt("Ingrese fecha");
+        let nombre = prompt("Ingrese nombre");
+        let mesa = prompt("Ingrese mesa:");
+        let index = reservas.push({nombre: nombre, fecha: fecha, mesa: mesa})
+        console.log(reservas[index-1])
+    }
+export {reservas, cancelarReservas, buscarReservasPorNombre, agregarReserva}
