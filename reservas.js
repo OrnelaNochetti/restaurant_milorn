@@ -50,9 +50,8 @@ function cancelarReservas(opcion) {
             let mesaCancelada = prompt("Ingrese la mesa que cancela la reserva");
             let index = reservas.findIndex(reserva => reserva.mesa === mesaCancelada );
             if (index !== -1) {
-                reservas.nombre = null;
-                reservas.fecha = null;
-                
+                reservas[index].nombre = null;
+                reservas[index].fecha = null;
             console.log(`Reserva de la mesa ${mesaCancelada} ha sido cancelada.`);
             } else {
                console.log("Reserva no encontrada.");
