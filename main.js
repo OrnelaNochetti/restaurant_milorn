@@ -2,6 +2,7 @@ import prompt_sync from "prompt-sync";
 import {comidas, bebidas, mostrarBebidas, mostrarComidas, } from "./carta.js";
 import {ordenes, verOrden, calcularCobro} from "./ordenes.js";
 import {reservas, cancelarReservas, buscarReservasPorNombre} from "./reservas.js";
+import { verMesas } from "./pedidos.js";
 
 
 const prompt = prompt_sync();
@@ -15,8 +16,8 @@ function mostrarMenu() {
     console.log("4. Ver orden");
     console.log("5. Pagar");
     console.log("6. Cancelar reserva");
+    console.log("7. Ver mesas");
     
-    console.log("7. Salir");
 }
 
 function opciones() {
@@ -50,6 +51,9 @@ function opciones() {
                 //prompt("Presione una tecla para continuar")
                 opciones()
                 break;
+         case 7: verMesas();
+         opciones();
+         break;
         default:
             console.log("Opcion no valida");
             break;

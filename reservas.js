@@ -81,5 +81,6 @@ function buscarReservasPorNombre(reservas, nombre) {
     
         return reservasEncontradas;
     }
+
     
 export {reservas, cancelarReservas, buscarReservasPorNombre}

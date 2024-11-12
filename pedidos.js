@@ -5,11 +5,16 @@ const prompt = PromptSync();
 
 const pedidos = []
 
+function verMesas() {
+    console.table(mesas)
+}
+
 function pedirComida() {
     let mesaQuePide = Number(prompt("Anote el id de la mesa:"));
     console.log(mesaQuePide);
     console.log(mesas);
-
+        
+    
 /*
     let mesas = mesas.find(m => m.id = id);
     let pedidoComida = prompt("Elija una opcion del menu");
@@ -20,7 +25,7 @@ function pedirComida() {
     }
   */  
 }
-pedirComida();
+
 
 function pedirBebida(id) {
     let mesas = mesas.find(m => m.id = id);
@@ -45,4 +50,4 @@ function verOrden(id) {
     }
 }
 
-export {pedidos, pedirComida, pedirBebida, verOrden }
+export {pedidos, pedirComida, pedirBebida, verOrden, verMesas}
