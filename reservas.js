@@ -46,18 +46,21 @@ const reservas = [
 
 function cancelarReservas(opcion) {
     switch (opcion) {
-        case `cancelar_especifica`:
-            let nombre = prompt("Ingrese el nombre del cliente que cancela:");
-            let fecha = prompt("Ingrese la fecha del dia reservado:");
-            let index = reservas.findIndex(reserva => reserva.nombre === nombre && reserva.fecha === fecha);
+        case 'cancelar_especifica':
+            console.log(reservas)
+            let mesaCancelada = Number(prompt("Ingrese la mesa que cancela la reserva"));
+            let index = reservas.findIndex(reserva => reserva.mesa === mesaCancelada );
             if (index !== -1) {
-                reservas.splice(index, 1);
-                console.log(`Reserva de ${nombre} para el ${fecha} ha sido cancelada.`);
+                reservas[index].nombre = null;
+                reservas[index].fecha = null;
+            console.log(`Reserva de la mesa ${mesaCancelada} ha sido cancelada.`);
+            console.log(reservas[index]);
             } else {
                console.log("Reserva no encontrada.");
             }
             break;
        case `cancelar_todas`:
+       case cancelar_todas:
             console.log("Todas las reservas han sido canceladas.");
             break;
          default:
@@ -65,12 +68,18 @@ function cancelarReservas(opcion) {
             break;
     }
 }
-cancelarReservas(`cancelar_especifica`, "Federico", "27/10/2024");
-cancelarReservas(`cancelar_todas`);
 
-function buscarReservasPorNombre(nombre) {
-    return reservas.filtrer(reserva => reserva.nombre.toLowerCase().trim() === nombre.toLowerCase().trim());
+function buscarReservasPorNombre(reservas, nombre) {
+        const nombreBuscado = nombre.toLowerCase();
+        const reservasEncontradas = [];
     
+        for (let reserva of reservas) {
+            if (reserva.nombre.toLowerCase() === nombreBuscado) {
+                reservasEncontradas.push(reserva);
+            }
+        }
+    
+        return reservasEncontradas;
     }
     
 export {reservas, cancelarReservas, buscarReservasPorNombre}

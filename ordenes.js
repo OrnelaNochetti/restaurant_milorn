@@ -1,6 +1,7 @@
 
 import prompt_sync from "prompt-sync";
 import {pedidos} from "./pedidos.js";
+const prompt = prompt_sync();
 
 const ordenes = []
 /*
@@ -71,12 +72,12 @@ function hacerPedido() {
     }
 }
 
-mostrarMenu();
+//mostrarMenu();
 
 let pedido = [];
 let continuar = true;
 
-while(continuar) {
+/*while(continuar) {
     let item = prompt("Ingrese el nombre del item (o 'fin' para terminar):");
     if (item === 'fin') {
         continuar = false;    
@@ -87,13 +88,13 @@ while(continuar) {
     } else {
         console.log("Item no encontrado en el menu.");
     }
-}
+}*/
 
-mesa.pedidos.push(...pedido);
-console.log(`Pedido para la mesa ${mesaId}:`);
-pedido.forEach(p => console.log(`${p.nombre} (x${p.cantidad}): $${p.precio}`));
+//mesa.pedidos.push(...pedido);
+//console.log(`Pedido para la mesa ${mesaId}:`);
+//pedido.forEach(p => console.log(`${p.nombre} (x${p.cantidad}): $${p.precio}`));
 
-hacerPedido();
-console.log(mesas);
+//hacerPedido();
+//console.log(mesas);
 
 export {ordenes, verOrden, calcularCobro}
