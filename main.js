@@ -3,6 +3,7 @@ import {comidas, bebidas, mostrarBebidas, mostrarComidas, } from "./carta.js";
 import {ordenes, verOrden, calcularCobro} from "./ordenes.js";
 import {reservas, cancelarReservas, buscarReservasPorNombre, agregarReserva} from "./reservas.js";
 import { verMesas } from "./pedidos.js";
+import { mesaDisponible } from "./mesas.js";
 
 
 const prompt = prompt_sync();
@@ -18,6 +19,7 @@ function mostrarMenu() {
     console.log("6. Cancelar reserva");
     console.log("7. Ver mesas");
     console.log("8. Agregar Reserva");
+    console.log("9. Mesa disponible");
     
 }
 
@@ -56,6 +58,9 @@ function opciones() {
          opciones();
          break;
          case 8: agregarReserva();
+         opciones();
+         break;
+         case 9: mesaDisponible();
          opciones();
          break;
         default:
