@@ -59,6 +59,7 @@ function cancelarReservas(opcion) {
                console.log("Reserva no encontrada.");
             }
             break;
+       case `cancelar_todas`:
        case cancelar_todas:
             console.log("Todas las reservas han sido canceladas.");
             break;
@@ -80,5 +81,6 @@ function buscarReservasPorNombre(reservas, nombre) {
     
         return reservasEncontradas;
     }
+
     
 export {reservas, cancelarReservas, buscarReservasPorNombre}

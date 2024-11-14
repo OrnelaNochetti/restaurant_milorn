@@ -57,3 +57,5 @@ const mesas = [
         disponibilidad: true
     },
 ]
+
+export {mesas}
