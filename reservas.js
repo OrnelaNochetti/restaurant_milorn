@@ -44,6 +44,7 @@ const reservas = [
     },
 ]
 
+
 function cancelarReservas(opcion) {
     switch (opcion) {
         case 'cancelar_especifica':
@@ -55,6 +56,7 @@ function cancelarReservas(opcion) {
                 reservas[index].fecha = null;
             console.log(`Reserva de la mesa ${mesaCancelada} ha sido cancelada.`);
             console.log(reservas[index]);
+
             } else {
                console.log("Reserva no encontrada.");
             }

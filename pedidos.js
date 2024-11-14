@@ -1,7 +1,7 @@
 import {comidas, bebidas, mostrarComidas, mostrarBebidas} from "./carta.js";
 
 const pedidos = []
-
+ 
 function pedirComida(id) {
     let mesas = mesas.find(m => m.id = id);
     let pedidoComida = prompt("Elija una opcion del menu");
@@ -29,11 +29,11 @@ function verOrden(id) {
     if (mesa) {
         console.log("Orden de la Mesa:", id);
         mesa.pedidos.forEach(pedido => {
-            console.log(`- ${pedido.nombre}: ${pedido.cantidad}`);
+            console.log(`${pedido.nombre}: ${pedido.cantidad}`);
         });
     } else {
         console.log("Mesa no encontrada.");
     }
 }
 
-export {pedidos, pedirComida, pedirBebida, verOrden }
+export {pedidos, pedirComida, pedirBebida, verOrden}
