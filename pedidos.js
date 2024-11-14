@@ -1,8 +1,21 @@
 import {comidas, bebidas, mostrarComidas, mostrarBebidas} from "./carta.js";
+import {mesas} from "./mesas.js";
+import PromptSync from "prompt-sync";
+const prompt = PromptSync();
 
 const pedidos = []
- 
-function pedirComida(id) {
+
+function verMesas() {
+    console.table(mesas)
+}
+
+function pedirComida() {
+    let mesaQuePide = Number(prompt("Anote el id de la mesa:"));
+    console.log(mesaQuePide);
+    console.log(mesas);
+        
+    
+/*
     let mesas = mesas.find(m => m.id = id);
     let pedidoComida = prompt("Elija una opcion del menu");
     if (pedidoComida > 0 && pedidoComida <= comidas.length) {
@@ -10,8 +23,9 @@ function pedirComida(id) {
     } else {
         console.log("opcion no valida");
     }
-    
+  */  
 }
+
 
 function pedirBebida(id) {
     let mesas = mesas.find(m => m.id = id);
@@ -36,4 +50,4 @@ function verOrden(id) {
     }
 }
 
-export {pedidos, pedirComida, pedirBebida, verOrden}
+export {pedidos, pedirComida, pedirBebida, verOrden, verMesas}

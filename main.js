@@ -1,7 +1,9 @@
 import prompt_sync from "prompt-sync";
 import {comidas, bebidas, mostrarBebidas, mostrarComidas} from "./carta.js";
 import {ordenes, verOrden, calcularCobro} from "./ordenes.js";
-import {reservas, cancelarReservas, buscarReservasPorNombre} from "./reservas.js";
+import {reservas, cancelarReservas, buscarReservasPorNombre, agregarReserva} from "./reservas.js";
+import { verMesas } from "./pedidos.js";
+import { mesaDisponible } from "./mesas.js";
 
 
 const prompt = prompt_sync();
@@ -15,17 +17,20 @@ function mostrarMenu() {
     console.log("4. Ver orden");
     console.log("5. Pagar");
     console.log("6. Cancelar reserva");
+    console.log("7. Ver mesas");
+    console.log("8. Agregar Reserva");
+    console.log("9. Mesa disponible");
     
-    console.log("7. Salir");
 }
 
 function opciones() {
-    // let id = parseInt(prompt("elegir opcion del menu: \n 1.Ir al  Menu principal de la aplicacion \n 2.pedir comida \n 3.pedir bebida \n 4.ver orden"));
+     //let id = parseInt(prompt("elegir opcion del menu: \n 1.Ir al  Menu principal de la aplicacion \n 2.pedir comida \n 3.pedir bebida \n 4.ver orden"));
     mostrarMenu();
     let id = parseInt(prompt("Opcion: "));
     switch (id) {
         case 1:
             mostrarBebidas();
+            mostrarComidas();
             //prompt("Presione una tecla para continuar")
             opciones()
             break; 
@@ -35,13 +40,13 @@ function opciones() {
             opciones()
             break;
         case 3:
-            verOrden(2);
-           // prompt("Presione una tecla para continuar")
+            verOrden(3);
+            //prompt("Presione una tecla para continuar")
             opciones()
             break;
         case 4:
-            calcularCobro(2);
-           // prompt("Presione una tecla para continuar")
+            calcularCobro(3);
+            //prompt("Presione una tecla para continuar")
             opciones()
             break;
         case 6:
@@ -49,6 +54,15 @@ function opciones() {
                 //prompt("Presione una tecla para continuar")
                 opciones()
                 break;
+         case 7: verMesas();
+         opciones();
+         break;
+         case 8: agregarReserva();
+         opciones();
+         break;
+         case 9: mesaDisponible();
+         opciones();
+         break;
         default:
             console.log("Opcion no valida");
             break;
