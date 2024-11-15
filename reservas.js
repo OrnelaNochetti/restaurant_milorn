@@ -1,44 +1,55 @@
 import prompt_sync from 'prompt-sync';
+import {mesaDisponible}  from './mesas.js';
 const prompt = prompt_sync();
 
 const reservas = [
-    {nombre: "julieta",
+    {
+        nombre: "julieta",
         fecha: "12/10/2024",
         mesa: 1
     },
-    {nombre: "maria",
+    {
+        nombre: "maria",
         fecha: "13/10/2024",
         mesa: 2
     },
-    {nombre: "ines",
+    {
+        nombre: "ines",
         fecha: "28/10/2024",
         mesa: 3
     },
-    {nombre: "juan",
+    {
+        nombre: "juan",
         fecha: "25/10/2024",
         mesa: 4
     },
-    {nombre: "agustin",
+    {
+        nombre: "agustin",
         fecha: "12/10/2024",
         mesa: 5
     },
-    {nombre: "federico",
+    {
+        nombre: "federico",
         fecha: "27/10/2024",
         mesa: 6
     },
-    {nombre: "lucia",
+    {
+        nombre: "lucia",
         fecha: "18/10/2024",
         mesa: 7
     },
-    {nombre: "leandro",
+    {
+        nombre: "leandro",
         fecha: "26/10/2024",
         mesa: 8
     },
-    {nombre: "milagros",
+    {
+        nombre: "milagros",
         fecha: "31/10/2024",
         mesa: 9
     },
-    {nombre: "jazmin",
+    {
+        nombre: "jazmin",
         fecha: "18/10/2024",
         mesa: 10
     },
@@ -49,38 +60,56 @@ function cancelarReservas(opcion) {
         case 'cancelar_especifica':
             console.log(reservas)
             let mesaCancelada = Number(prompt("Ingrese la mesa que cancela la reserva"));
-            let index = reservas.findIndex(reserva => reserva.mesa === mesaCancelada );
+            let index = reservas.findIndex(reserva => reserva.mesa === mesaCancelada);
             if (index !== -1) {
                 reservas[index].nombre = null;
                 reservas[index].fecha = null;
-            console.log(`Reserva de la mesa ${mesaCancelada} ha sido cancelada.`);
-            console.log(reservas[index]);
+                console.log(`Reserva de la mesa ${mesaCancelada} ha sido cancelada.`);
+                console.log(reservas[index]);
             } else {
-               console.log("Reserva no encontrada.");
+                console.log("Reserva no encontrada.");
             }
             break;
-       case `cancelar_todas`:
-       case cancelar_todas:
+        case `cancelar_todas`:
+        case cancelar_todas:
             console.log("Todas las reservas han sido canceladas.");
             break;
-         default:
+        default:
             console.log("Opcion no valida.");
             break;
     }
 }
 
 function buscarReservasPorNombre(reservas, nombre) {
-        const nombreBuscado = nombre.toLowerCase();
-        const reservasEncontradas = [];
-    
-        for (let reserva of reservas) {
-            if (reserva.nombre.toLowerCase() === nombreBuscado) {
-                reservasEncontradas.push(reserva);
-            }
+    const nombreBuscado = nombre.toLowerCase();
+    const reservasEncontradas = [];
+
+    for (let reserva of reservas) {
+        if (reserva.nombre.toLowerCase() === nombreBuscado) {
+            reservasEncontradas.push(reserva);
         }
-    
-        return reservasEncontradas;
     }
 
-    
-export {reservas, cancelarReservas, buscarReservasPorNombre}
+    return reservasEncontradas;
+}
+
+function agregarReserva() {
+    let fecha = prompt("Ingrese fecha:");
+    let nombre = prompt("Ingrese nombre:");
+    let mesa = prompt("Ingrese mesa:");
+    let disponible = mesaDisponible(mesa)
+    if (disponible) {
+        let index = reservas.push({ nombre: nombre, fecha: fecha, mesa: mesa })
+        let numeroDeMesa = reservas[index - 1].mesa
+        console.log(numeroDeMesa);
+
+
+    }else{
+        console.log("mesa no disponible");
+        
+    }
+}
+
+
+
+export { reservas, cancelarReservas, buscarReservasPorNombre, agregarReserva }
